@@ -28,6 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/mypage', [ReservationController::class, 'mypage'])->name('mypage');
     Route::get('/reservetion', [ReservationController::class, 'reservetion']);
+    Route::get('/review', [ReservationController::class, 'review']);
 });
 
 Route::get('/', [ReservationController::class, 'top']);
