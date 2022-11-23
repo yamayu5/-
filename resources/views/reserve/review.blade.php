@@ -7,14 +7,12 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-        <a href="/reservation">予約</a>
-        <a href="/login">登録</a>
-        <h1>マッサージ</h1>
+        <h1>レビュー</h1>
         <div class='posts'>
-            @foreach ($users as $user)
+            @foreach ($reviews as $review)
             <div class='post'>
                 <h2 class='title'>クチコミ</h2>
-                
+                <p class='body'>{{ $review->body }}</p>
             </div>
             @endforeach
         </div>

@@ -12,7 +12,7 @@ class ReservationController extends Controller
 {
     public function top(User $user, Review $review)
     {
-    return view('reserve/mypage')->with(['mypage' => $user->get(), 'top' => $review->getByLimit()]);
+    return view('reserve/top')->with(['users' => $user->get(), 'top' => $review->getByLimit()]);
     }
     
     public function mypage(Course $course)
@@ -27,7 +27,7 @@ class ReservationController extends Controller
 
    public function review(Review $review)
     {
-    return view('reserve/top')->with(['top' => $review->getByLimit()]);
+    return view('reserve/review')->with(['reviews' => $review->getByLimit()]);
     }
 }
 
