@@ -27,10 +27,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/mypage', [ReservationController::class, 'mypage'])->name('mypage');
-    Route::get('/reservetion', [ReservationController::class, 'reservetion']);
-    Route::get('/review', [ReservationController::class, 'review']);
+    Route::get('/reservation', [ReservationController::class, 'reservation'])->name('reservation');
+    Route::get('/review', [ReservationController::class , 'review'])->name('review');
+    Route::get('/review/{review}', [ReservationController::class ,'show']);
 });
 
 Route::get('/', [ReservationController::class, 'top']);
+Route::post('/', [ReservationController::class, 'store']);
 
 require __DIR__.'/auth.php';

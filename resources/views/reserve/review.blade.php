@@ -8,13 +8,30 @@
     </head>
     <body>
         <h1>レビュー</h1>
-        <div class='posts'>
-            @foreach ($reviews as $review)
-            <div class='post'>
-                <h2 class='title'>クチコミ</h2>
-                <p class='body'>{{ $review->body }}</p>
+        <form action="/" method="POST">
+            @csrf
+            <div class="user_name">
+                {{ Auth::user()->name }}
             </div>
-            @endforeach
+            <div class="body">
+                <h2>Body</h2>
+                <textarea name="review[body]" placeholder="今日も1日お疲れさまでした。"></textarea>
+            </div>
+            <input type="submit" value="保存"/>
+            <div class="review">
+                <h3>評価</h3>
+            <select name="select2">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+            </div>
+        </form>
+        <div class="footer">
+            <a href="/">戻る</a>
+        </div>
         </div>
     </body>
 </html>

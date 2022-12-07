@@ -18,8 +18,22 @@ class CourseSeeder extends Seeder
     public function run()
     {
         DB::table('courses')->insert([
-            'title' => 'コース名',
-            'body' => '30分コース',
+            'title' => '30分コース',
+            'body' => '30分の施術をする',
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+            ]);
+            
+        DB::table('courses')->insert([
+            'title' => '60分コース',
+            'body' => '60分の施術をする',
+            'created_at' => new DateTime(),
+            'updated_at' => new DateTime(),
+            ]);
+            
+        DB::table('courses')->insert([
+            'title' => '90分コース',
+            'body' => '90分の施術をする',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
             ]);
