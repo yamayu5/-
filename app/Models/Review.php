@@ -9,6 +9,11 @@ class Review extends Model
 {
     use HasFactory;
     
+    protected $fillable = [
+        'title',
+        'body',
+    ];
+    
     public function user()   
     {
         return $this->belongsTo(User::class);  
@@ -23,4 +28,5 @@ class Review extends Model
     {
     return $this->orderBy('updated_at', 'DESC')->limit($limit_count)->get();
     }
+
 }

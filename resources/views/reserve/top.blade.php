@@ -8,13 +8,14 @@
     </head>
     <body>
         <a href="/reservation">予約</a>
-        <a href="/login">登録</a>
+        <a href="/login">ログイン</a>
         <h1>マッサージ</h1>
+        <h2 class='title'>
+        </h2>
         <div class='posts'>
             @foreach ($users as $user)
             <div class='post'>
                 <h2 class='title'>クチコミ</h2>
-                
             </div>
             @endforeach
         </div>
